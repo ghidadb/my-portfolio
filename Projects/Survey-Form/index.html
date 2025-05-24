@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bamptee's Customer Feedback Survey</title>
+  <link rel="stylesheet" href="styles.css" />
+</head> 
+
+<body>
+  <h1 id="title">Bamptee's Customer Feedback Survey</h1>
+  <p id="description">Tell us what you think about Bamptee — it only takes a minute!</p>
+
+  <form id="survey-form">
+
+    <label id="name-label" for="name">Name:
+      <input id="name" type="text" placeholder="Enter your name" required />
+    </label>
+
+    <label id="email-label" for="email">Email:
+      <input id="email" type="email" placeholder="Enter your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="50" minlength="5" required />
+    </label>
+
+    <label id="number-label" for="number">Years in Business:
+      <input id="number" type="number" placeholder="Years" min="0" max="50" />
+    </label>
+
+    <label for="dropdown">What best describes your business type?</label>
+    <select id="dropdown">
+      <option value="retail">Retail</option>
+      <option value="services">Services</option>
+    </select>
+
+    <p>Would you recommend Bamptee to another entrepreneur?</p>
+    <label><input type="radio" name="recommend" value="1" /> Yes</label>
+    <label><input type="radio" name="recommend" value="2" /> No</label>
+
+    <p>What features do you use most? </p>
+    <label><input type="checkbox" value="inventory" /> Inventory Management</label>
+    <label><input type="checkbox" value="analytics" /> Sales Analytics</label>
+
+    <p>Additional Feedback:</p>
+    <textarea placeholder="Leave your comments here..."></textarea>
+
+    <button id="submit" type="submit">Submit</button>
+
+  </form>
+</body>
+</html>

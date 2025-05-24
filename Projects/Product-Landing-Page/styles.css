@@ -1,0 +1,262 @@
+:root {
+  --primary: #4e54c8;
+  --secondary: #8f94fb;
+  --light: #f9f9f9;
+  --dark: #222;
+  --text: #333;
+  --border-radius: 10px;
+  --transition: 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: white;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* HEADER */
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+#header-img {
+  height: 45px;
+}
+
+#nav-bar {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-link {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--primary);
+}
+
+/* HERO SECTION */
+#hero {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: white;
+  text-align: center;
+  padding: 140px 20px 80px;
+}
+
+#hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+#hero p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#email {
+  padding: 12px;
+  width: 260px;
+  max-width: 100%;
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+#submit {
+  padding: 12px 20px;
+  background: white;
+  color: var(--primary);
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+#submit:hover {
+  background: var(--light);
+}
+
+/* SECTION SPACING */
+section {
+  padding: 60px 10%;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+/* FEATURES */
+.features-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.features-grid div {
+  background: var(--light);
+  padding: 25px;
+  width: 280px;
+  text-align: center;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  transition: transform var(--transition);
+}
+
+.features-grid div:hover {
+  transform: translateY(-5px);
+}
+
+.features-grid h3 {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+/* VIDEO */
+#how-it-works {
+  text-align: center;
+}
+
+#video {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* PRICING */
+.pricing-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.box {
+  background: var(--light);
+  padding: 30px;
+  width: 260px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform var(--transition);
+}
+
+.box:hover {
+  transform: translateY(-6px);
+}
+
+.box h3 {
+  margin-bottom: 15px;
+}
+
+.box p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.box button {
+  background: var(--primary);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.box button:hover {
+  background: var(--secondary);
+}
+
+/* FOOTER */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95em;
+}
+
+footer a {
+  color: #eee;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 5%;
+  }
+
+  #nav-bar {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #hero h1 {
+    font-size: 2.2em;
+  }
+
+  #hero p {
+    font-size: 1em;
+  }
+
+  .features-grid div,
+  .box {
+    width: 90%;
+  }
+
+  #video {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  #submit, #email {
+    width: 100%;
+  }
+}
