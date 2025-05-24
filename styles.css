@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap'); /* Imports the Open Sans font with weights 400 (normal), 600 (semi-bold), and 700 (bold) from Google Fonts */
+
+:root {
+  --primary: #0a1f44;       /* Navy Blue – used for primary backgrounds like the navbar */
+  --secondary: #0277bd;     /* Sea Blue – used for secondary accents like hover states */
+  --light: #f5f5f5;         /* Very Light Gray – used as the body background */
+  --gray-bg: #eaeaea;       /* Light gray – used as background in sections like projects */
+  --dark-gray: #2f2f2f;     /* Dark Gray – typically used for the footer background */
+  --text: #1c1c1c;          /* Very dark gray – used as the main text color */
+  --accent: #0097a7;        /* Teal Accent – used for buttons, borders, hover effects */
+  --white: #ffffff;         /* Pure White – used for text on dark backgrounds */
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Reusable soft shadow – adds depth to elements */
+}
+
+/* Global Styling */
+* {
+  margin: 0; /* Removes default margin from all elements to eliminate inconsistent spacing */
+  padding: 0; /* Removes default padding to allow custom spacing */
+  box-sizing: border-box; /* Ensures padding and borders are included in element dimensions */
+  scroll-behavior: smooth; /* Enables smooth scrolling when navigating via anchor links */
+}
+
+body {
+  font-family: 'Open Sans', sans-serif; /* Sets the main font of the page to Open Sans with sans-serif fallback */
+  background: var(--light);             /* Applies a light gray background color from the root variable */
+  color: var(--text);                   /* Sets the default text color using the --text variable */
+  overflow-x: hidden;                   /* Prevents horizontal scrolling if content overflows */
+}
+
+/* Navbar */
+#navbar {
+  position: fixed;                      /* Keeps the navbar fixed at the top even when scrolling */
+  top: 0;                               /* Aligns the navbar to the top of the page */
+  width: 100%;                          /* Makes the navbar span the full width of the screen */
+  background: var(--primary);           /* Uses the primary navy blue color for the navbar background */
+  color: var(--white);                  /* Sets text color inside navbar to white */
+  padding: 15px 5%;                     /* Adds padding inside the navbar: 15px top/bottom and 5% left/right */
+  display: flex;                        /* Uses Flexbox for horizontal layout of inner elements */
+  justify-content: space-between;      /* Distributes space between logo and nav links */
+  align-items: center;                 /* Vertically centers navbar items */
+  z-index: 1000;                        /* Ensures the navbar stays on top of other content */
+  box-shadow: var(--shadow);           /* Applies a soft drop shadow using the shadow variable */
+  transition: background 0.5s ease;     /* Smooth transition when background color changes (e.g., on scroll) */
+}
+
+.nav-logo {
+  animation: zoomIn 1s ease-out;        /* Animates the logo with a zoom-in effect on load */
+}
+
+#header-img {
+  width: 80px;                          /* Sets the width of the profile image */
+  height: 80px;                         /* Sets the height of the profile image */
+  object-fit: cover;                    /* Ensures the image covers the entire container without stretching */
+  border-radius: 50%;                   /* Makes the image circular */
+  border: 3px solid var(--accent);      /* Adds a teal-colored border around the image */
+  transition: transform 0.4s ease-in-out; /* Smooth scaling effect when the image is hovered */
+}
+
+#header-img:hover {
+  transform: scale(1.2);                /* Slightly enlarges the image on hover for a dynamic effect */
+}
+
+#navbar ul {
+  list-style: none;                     /* Removes default bullet points from the list */
+  display: flex;                        /* Displays list items in a row using Flexbox */
+  gap: 30px;                            /* Adds 30px of spacing between each list item */
+}
+
+#navbar a {
+  color: var(--white);                  /* Makes the text color white */
+  text-decoration: none;               /* Removes underline from links */
+  font-weight: 600;                     /* Applies bold font weight */
+  transition: color 0.3s;               /* Smooth color transition on hover */
+}
+
+#navbar a:hover {
+  color: var(--accent);                 /* Changes link color to teal on hover */
+}
+
+#profile-link {
+  background-color: var(--accent); /* Sets background color to teal for the GitHub button */
+  color: var(--white);             /* Sets text color to white for contrast */
+  padding: 10px 20px;              /* Adds space inside the button horizontally and vertically */
+  border-radius: 25px;             /* Makes the button pill-shaped with rounded corners */
+  font-weight: 600;                /* Applies semi-bold text */
+  transition: all 0.3s ease;       /* Smooth transition for all properties on interaction */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Adds a soft shadow under the button */
+}
+
+#profile-link:hover {
+  background-color: var(--secondary); /* Changes background to blue on hover for interactivity */
+}
+
+/* Welcome Section */
+#welcome-section {
+  background: linear-gradient(to right, #003366, #0066cc); /* Dark to lighter blue gradient background */
+  color: white;                     /* White text for strong contrast */
+  padding: 100px 40px;              /* Adds vertical and horizontal spacing around content */
+  text-align: center;               /* Centers text horizontally */
+  min-height: 100vh;                /* Makes section fill full screen height */
+  display: flex;                    /* Uses flex layout to center content */
+  flex-direction: column;          /* Stack content vertically */
+  justify-content: center;         /* Center vertically within the section */
+  align-items: center;             /* Center horizontally */
+}
+
+#welcome-section h1 {
+  font-size: 3em;                   /* Large headline size */
+  font-weight: bold;               /* Bold font for emphasis */
+  margin: 0;                       /* Remove default margin */
+}
+
+#welcome-section p {
+  font-size: 1.5em;                /* Slightly smaller text under heading */
+  margin-top: 10px;                /* Adds space above the paragraph */
+}
+
+/* Responsive Styling */
+@media (max-width: 400px) {
+  #welcome-section {
+    padding: 60px 20px;           /* Reduces padding for smaller devices */
+  }
+  #welcome-section h1 {
+    font-size: 1.8em;             /* Smaller heading for small screens */
+    line-height: 1.2;             /* Reduces spacing between lines */
+    word-break: break-word;      /* Breaks long words to prevent overflow */
+  }
+  #welcome-section p {
+    font-size: 1em;               /* Smaller paragraph text */
+    line-height: 1.5;             /* Adequate line spacing for readability */
+    padding: 0 10px;              /* Adds horizontal padding inside paragraph */
+  }
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    flex-direction: column;       /* Stack navbar items vertically on smaller screens */
+    align-items: flex-start;      /* Align items to the left */
+    gap: 10px;                    /* Add spacing between elements */
+  }
+  #navbar ul {
+    flex-direction: column;       /* Stack nav links vertically */
+    align-items: flex-start;      /* Align to left */
+    width: 100%;                  /* Full width for mobile nav */
+    padding-left: 0;              /* Remove left padding */
+  }
+  #header-img {
+    width: 100px;                 /* Increase profile image size */
+    height: 100px;                /* Keep it square */
+  }
+  #welcome-section h1 {
+    font-size: 2.3em;             /* Scale down heading */
+  }
+  #welcome-section p {
+    font-size: 1.2em;             /* Scale down paragraph text */
+  }
+  .project-container {
+    grid-template-columns: 1fr;   /* Stack projects vertically for small screens */
+  }
+  .project-tile {
+    width: 90%;                   /* Reduce tile width */
+    margin: auto;                 /* Center project tile */
+  }
+  #contact h2 {
+    font-size: 2em;               /* Resize contact heading */
+  }
+  #contact p {
+    font-size: 1rem;              /* Resize contact paragraph */
+  }
+  #contact form {
+    width: 100%;                  /* Make form full width */
+    padding: 0 10px;              /* Add inner padding */
+  }
+  .contact-heading {
+    flex-direction: column;       /* Stack logo and text */
+    align-items: center;          /* Center align */
+  }
+  .contact-logo {
+    width: 60px;                  /* Smaller logo size */
+    height: 60px;
+  }
+}
+
+/* Projects Section */
+#projects {
+  padding: 90px 40px;             /* Adds padding to the section */
+  background: var(--gray-bg);     /* Light gray background from root variable */
+  text-align: center;             /* Centers text and content */
+  transition: background-color 0.4s ease; /* Smooth background change if triggered */
+}
+
+#projects h2 {
+  font-size: 2.8em;               /* Large section heading */
+  margin-bottom: 40px;            /* Space below heading */
+  color: var(--primary);          /* Dark navy heading for contrast */
+}
+
+.project-container {
+  display: grid;                  /* Use CSS Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive tile columns */
+  gap: 35px;                      /* Space between tiles */
+  max-width: 1200px;              /* Constrain total width */
+  margin: auto;                   /* Center the grid container */
+}
+
+.project-tile {
+  background: linear-gradient(to bottom right, var(--primary), var(--secondary)); /* Blue gradient background */
+  color: var(--white);            /* White text for contrast */
+  border-radius: 15px;            /* Rounded corners */
+  padding: 30px 20px;             /* Space inside each tile */
+  box-shadow: var(--shadow);      /* Adds shadow to lift tile off the page */
+  text-align: center;             /* Center text inside tile */
+  transition: transform 0.4s ease, background 0.4s, box-shadow 0.4s; /* Smooth animation effects */
+}
+
+.project-tile:hover {
+  transform: scale(1.05); /* Slightly enlarges the project tile when hovered */
+  background: linear-gradient(to top right, var(--secondary), var(--accent)); /* Reverses gradient direction and changes colors on hover */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* Adds a deeper shadow for a raised effect */
+  cursor: pointer; /* Changes cursor to pointer to indicate clickability */
+}
+
+.project-tile a {
+  text-decoration: none; /* Removes underlines from links inside project tiles */
+  color: white; /* Forces white text color for better contrast on dark backgrounds */
+}
+
+.project-tile h3 {
+  font-size: 1.8em; /* Sets a larger font size for project titles */
+  margin-bottom: 10px; /* Adds space below each title */
+}
+
+.project-tile p {
+  font-size: 1.1em; /* Sets paragraph font slightly larger than default */
+}
+
+/* Contact Section */
+#contact {
+  padding: 90px 20px; /* Adds vertical and horizontal padding around the section */
+  background: linear-gradient(to right, #89f7fe, #66a6ff); /* Light blue gradient background */
+  color: var(--text); /* Applies the main text color (dark) from the root */
+  text-align: center; /* Centers all text and elements */
+  transition: background 0.5s ease-in-out; /* Smooth background transition effect */
+}
+
+.contact-heading {
+  display: inline-flex; /* Flex layout for logo and heading side by side */
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center the entire group */
+  gap: 20px; /* Space between the logo and heading */
+  flex-wrap: nowrap; /* Prevents items from wrapping to the next line */
+  margin-bottom: 20px; /* Space below the heading area */
+}
+
+.contact-logo {
+  width: 75px; /* Width of the contact image */
+  height: 75px; /* Height of the contact image */
+  object-fit: contain; /* Ensures the image fits without cropping */
+  border-radius: 12px; /* Slightly rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle drop shadow */
+  transition: transform 0.3s ease-in-out; /* Smooth scale effect on hover */
+}
+
+.contact-logo:hover {
+  transform: scale(1.1); /* Enlarges the logo slightly on hover */
+}
+
+#contact h2 {
+  font-size: 2.8rem; /* Large heading size for the contact title */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+#contact p {
+  font-size: 1.2rem; /* Medium size paragraph text */
+  margin-bottom: 30px; /* Adds spacing below paragraph */
+}
+
+#contact form {
+  max-width: 550px; /* Restricts form width for better readability */
+  margin: 0 auto; /* Centers the form horizontally */
+  display: flex; /* Uses flex layout for stacking form elements */
+  flex-direction: column; /* Arranges form inputs vertically */
+  gap: 20px; /* Adds spacing between each form field */
+}
+#contact input,
+#contact textarea {
+  padding: 15px; /* Adds space inside text inputs and textarea */
+  border: none; /* Removes default input borders */
+  border-radius: 10px; /* Rounds the corners for a softer look */
+  font-size: 1rem; /* Sets a readable font size */
+  font-family: inherit; /* Inherits the font from the body (Open Sans) */
+  box-shadow: var(--shadow); /* Applies a light shadow to lift the inputs */
+  transition: box-shadow 0.3s ease; /* Smooth transition when the shadow changes (on focus) */
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: none; /* Removes default browser focus outline */
+  box-shadow: 0 0 10px var(--accent); /* Highlights the field with a teal glow */
+}
+
+#contact button {
+  background: var(--white); /* White background for the button */
+  color: var(--primary); /* Navy blue text color */
+  font-weight: bold; /* Bold text for emphasis */
+  padding: 15px; /* Space inside the button */
+  border: none; /* Removes default border */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 1rem; /* Sets font size */
+  transition: all 0.3s ease; /* Smooth transition for all effects on hover */
+  cursor: pointer; /* Changes cursor to pointer to indicate it's clickable */
+}
+
+#contact button:hover {
+  background: #e0e0e0; /* Light gray background on hover */
+  color: var(--accent); /* Teal text on hover for contrast */
+  transform: scale(1.05); /* Slightly enlarges the button to create interaction feedback */
+}
+
+/* Footer */
+footer {
+  text-align: center; /* Centers the text in the footer */
+  padding: 25px; /* Adds padding around the footer */
+  background-color: #2f2f2f; /* Dark gray background */
+  color: var(--white); /* White text color */
+  font-size: 1rem; /* Default font size */
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for background and text color on hover */
+}
+
+footer:hover {
+  background-color: #3a3a3a; /* Slightly lighter dark gray on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Starts invisible */
+    transform: translateY(40px); /* Starts below its final position */
+  }
+  to {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Moves into place */
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0); /* Starts at 0% scale (invisible) */
+    opacity: 0; /* Fully transparent */
+  }
+  100% {
+    transform: scale(1); /* Full size */
+    opacity: 1; /* Fully visible */
+  }
+}
